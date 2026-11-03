@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TENGU CLUB デモ</title>
+<style>
+body{margin:0;font-family:-apple-system,sans-serif;background:#f7f7f7;color:#222}
+header{background:#a52a2a;color:white;padding:24px 18px}
+header h1{margin:4px 0;font-size:28px}
+main{padding:18px;padding-bottom:100px}
+.card{background:white;border-radius:15px;padding:20px;margin-bottom:15px;box-shadow:0 2px 8px #0001}
+h2{margin-top:0}
+button{border:0;border-radius:10px;background:#a52a2a;color:white;padding:12px;font-size:15px}
+nav{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;justify-content:space-around;padding:12px 0;border-top:1px solid #ddd}
+nav button{background:transparent;color:#333;font-size:13px;padding:8px}
+.page{display:none}.page.active{display:block}
+.small{font-size:12px;color:#777}
+</style>
+</head>
+<body>
+<header><small>非公式デモアプリ</small><h1>TENGU CLUB</h1>おいしい時間を、もっとお得に。</header>
+<main>
+<section id="home" class="page active">
+<div class="card"><h2>ようこそ！</h2><p>テンアライドのお客様向けアプリの試作品です。</p></div>
+<div class="card"><h2>🎁 新規登録特典</h2><p>お会計5%OFF（サンプル）</p><button onclick="show('coupon')">クーポンを見る</button></div>
+</section>
+<section id="coupon" class="page">
+<div class="card"><h2>🎟 クーポン</h2><p>お会計5%OFF</p><p class="small">デモ用です。実際のお店では使用できません。</p></div>
+</section>
+<section id="shop" class="page">
+<div class="card"><h2>📍 店舗検索</h2><p>お近くのお店を探せます。</p><button onclick="window.open('https://www.teng.co.jp/','_blank')">公式サイトを見る</button></div>
+</section>
+<section id="member" class="page">
+<div class="card"><h2>👤 会員証</h2><p>会員番号：DEMO-0001</p><h2>350 pt</h2><p class="small">架空のポイントです。</p></div>
+</section>
+</main>
+<nav>
+<button onclick="show('home')">🏠<br>ホーム</button>
+<button onclick="show('coupon')">🎟<br>特典</button>
+<button onclick="show('shop')">📍<br>店舗</button>
+<button onclick="show('member')">👤<br>会員証</button>
+</nav>
+<script>
+function show(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
